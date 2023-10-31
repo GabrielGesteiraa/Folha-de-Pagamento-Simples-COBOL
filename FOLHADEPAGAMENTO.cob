@@ -32,7 +32,7 @@
         ELSE
         COMPUTE ImpostoRenda = SalarioBruto * 0,10.
 
-         COMPUTE INSS = SalarioBruto * 0.08.
+         COMPUTE INSS = SalarioBruto * 0,08.
 
          COMPUTE SalarioLiquido = SalarioBruto - ImpostoRenda - INSS.
          MOVE SalarioBruto TO SALARIO-ED.

@@ -15,14 +15,7 @@
 
              SELECT RELATO ASSIGN TO 'E:\COBOL\RELATO.TXT'
              ORGANIZATION IS SEQUENTIAL.
-
-
-
-
-
-
-
-
+      
        DATA DIVISION.
        FILE SECTION.
        FD CLIENTES.
@@ -35,7 +28,6 @@
        FD RELATO.
        01 RELATO-REG.
           05 RELATO-DADOS  PIC X(79).
-
 
        WORKING-STORAGE SECTION.
        77 WRK-OPCAO       PIC X(1).
@@ -88,7 +80,6 @@
                10 COLUMN PLUS 2 PIC X(01)
                              BACKGROUND-COLOR 3
                              USING WRK-TECLA.
-
 
        PROCEDURE DIVISION.
        0001-PRINCIPAL SECTION.
@@ -234,9 +225,6 @@
                         DISPLAY '----------------------'
                         MOVE 0 TO WRK-CONTALINHA
                      END-IF
-
-
-
                    END-PERFORM
              END-READ.
                MOVE 'REGISTROS LIDOS ' TO WRK-MSGERRO.
@@ -261,9 +249,9 @@
                          WRITE RELATO-REG
                      READ CLIENTES NEXT
                    END-PERFORM
-      *                MOVE 'REGISTROS LIDOS ' TO RELATO-REG
-      *                MOVE WRK-QTREGISTROS    TO RELATO-REG(18:05)
-      *                WRITE RELATO-REG
+                      MOVE 'REGISTROS LIDOS ' TO RELATO-REG
+                      MOVE WRK-QTREGISTROS    TO RELATO-REG(18:05)
+                      WRITE RELATO-REG
                      CLOSE RELATO
                 END-READ.
                MOVE 'REGISTROS LIDOS ' TO WRK-MSGERRO.
